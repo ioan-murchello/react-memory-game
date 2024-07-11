@@ -1,0 +1,28 @@
+ 
+.main-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/funnyimg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(3px) sepia(1);
+  -webkit-backdrop-filter: blur(3px);
+  filter: blur(2px) sepia(1);
+  -webkit-filter: blur(2px) sepia(1);
+  z-index: -1; /* Place the background behind the content */
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Ensure the content is above the background */
+}

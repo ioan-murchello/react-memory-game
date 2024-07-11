@@ -1,0 +1,455 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+
+:root {
+  --animate-duration: 0.8s;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+
+.playfield {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 2rem;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.players {
+  width: 100%;
+  align-self: self-start;
+}
+
+.players div {
+  padding: 5px;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.players span {
+  color: rgb(255, 0, 170);
+  font-size: 2rem;
+}
+
+.currentPlayer {
+  background-color: #a66ee6;
+  color: white; 
+}
+
+.currentPlayer span {
+  color: rgb(70, 255, 14);
+}
+
+.playground {
+  display: grid;
+  perspective: 1000px;
+  place-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 968px) {
+  .playground {
+    width: 100% !important; 
+  }
+}
+
+@media (max-width: 600px) {
+  .playground {
+    width: 100% !important;
+    height: 50% !important;
+  }
+}
+
+
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.select-players {
+  display: flex;
+  column-gap: 1.5rem;
+}
+
+.select-players button {
+  color: #fff;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px;
+  overflow: hidden;
+  border-radius: 8px;
+  perspective: 1000px;
+  transition: transform 0.6s;
+}
+
+.card img {
+  position: absolute;
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
+}
+
+.card .inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+.card .inner .front,
+.card .inner .back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card .inner .front {
+  background: rgb(233, 247, 252);
+}
+
+.card .inner .back {
+  transform: rotateY(180deg);
+  background-color: #fff;
+}
+
+.card .front img {
+  width: 45%;
+  height: 45%;
+}
+
+.game-over {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(221, 221, 221, 0.856);
+  backdrop-filter: blur(12px);
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 2rem;
+  width: 100%;
+  max-width: 500px;
+  min-width: 200px;
+  height: 100%;
+  max-height: 500px;
+  min-height: 200px;
+  background-color: rgba(189, 210, 236, 0.404);
+  padding: 1.2rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: 0 0 15px 5px rgb(3, 248, 27), 0 0 15px 20px rgb(36, 233, 56),
+    0 0 15px 40px rgb(126, 240, 137);
+}
+
+.info h2 {
+  font-size: 2rem;
+  color: rgb(252, 46, 46);
+}
+
+.info button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.activePlayer {
+  box-shadow: 0px 0px 15px black;
+  background: linear-gradient(-20deg, rgb(128, 68, 0), orange) !important;
+}
+
+.scores-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1.5rem;
+  align-items: center;
+}
+
+.scores-info svg {
+  width: 3rem;
+  height: 3rem;
+  fill: orangered;
+}
+
+.scores-info p {
+  font-size: 1.2rem;
+}
+
+.action-btns {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.action-btns button {
+  padding: 20px 30px;
+}
+
+.action-btns svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.menu {
+  display: flex;
+  max-width: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.menu:hover {
+  box-shadow: 0 0 8px black;
+}
+
+.menu svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: rgb(25, 187, 25);
+}
+
+.animate__animated.animate__pulse {
+  --animate-duration: 0.4s;
+}
+
+@keyframes animate__jello_custom {
+  0% {
+    transform: none;
+  }
+  11.1% {
+    transform: none;
+  }
+  22.2% {
+    transform: skewX(-4.5deg) skewY(-4.5deg);
+  }
+  33.3% {
+    transform: skewX(3deg) skewY(3deg);
+  }
+  55.5% {
+    transform: skewX(1deg) skewY(1deg);
+  }
+  88.8% {
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.animate__jello_custom {
+  animation: animate__jello_custom 0.6s both;
+}
+
+.btn {
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 40px 40px;
+  height: 60px;
+  width: 100%;
+  max-width: 210px;
+  opacity: 1;
+  background: linear-gradient(8deg, rgb(26, 110, 121), rgb(51, 155, 240));
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.btn .btn-element {
+  font-weight: 500;
+  letter-spacing: 0.7px;
+}
+
+.btn:hover {
+  animation: rotate 0.7s ease-in-out both;
+}
+
+.btn:hover .btn-element {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(2deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-2deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+
+.main-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/funnyimg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(4px) sepia(0.7) grayscale(0.4);
+  z-index: -1;
+}
+
+.content { 
+  z-index: 1;
+}
+
+.select-players .btn:nth-child(1) .btn-element {
+  color: rgb(36, 255, 36);
+}
+
+.select-players .btn:nth-child(2) .btn-element {
+  color: orange;
+}
+
+.select-players .btn:nth-child(3) .btn-element {
+  color: rgb(24, 23, 23);
+}
+
+/* Media Queries */
+
+/* For large screens and desktops */
+@media (min-width: 1200px) {
+  .playground {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+/* For medium screens like tablets */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .playground {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+/* For smaller screens like mobile phones */
+@media (max-width: 767px) {
+  .playground {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(4, auto);
+    gap: 5px;
+  }
+
+  .btn {
+    padding: 20px 20px;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .btn .btn-element {
+    font-size: 0.9rem;
+  }
+
+  .info {
+    max-width: 90%;
+  }
+}
