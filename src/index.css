@@ -39,7 +39,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  row-gap: 2rem;
+  row-gap: 0.7rem;
   width: 100%;
   max-width: 1000px;
   height: 100%;
@@ -50,13 +50,25 @@ main {
   width: 100%;
 }
 
-.players div { 
+.players div {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px;
+  column-gap: 5px;
   text-align: center;
   font-size: 1.8rem;
+  background: rgba(233, 247, 252, 0.583);
+  color:#000000;
+  box-shadow: 0 0 5px black;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  &:first-child{
+    margin-bottom: 5px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -66,12 +78,12 @@ main {
 }
 
 .players span {
-  color: rgb(255, 0, 170);
+  color: rgb(255, 234, 0);
   font-size: 2rem;
 }
 
 .currentPlayer {
-  background: linear-gradient(to top, rgb(27, 71, 158), rgb(78, 214, 232));
+  background: rgba(13, 165, 76, 0.867) !important; 
   color: white;
 }
 
@@ -83,12 +95,13 @@ main {
   display: grid;
   perspective: 1000px;
   place-content: center;
-  gap: 10px;
+  gap: 0.5rem;
 }
  
 @media (max-width: 600px) {
   .playground {
     width: 100% !important; 
+    /* height: 45% !important; */
   }
 }
 
@@ -131,8 +144,8 @@ main {
 
 .card img {
   position: absolute;
-  width: 80%;
-  height: 80%;
+  width: 68%;
+  height: 68%;
   object-fit: contain;
 }
 
@@ -163,9 +176,11 @@ main {
 }
 
 .card .inner .front {
-  background: rgb(233, 247, 252);
+  background-image: url('./images/leaves.jpg');
+  background-size: cover;
+  filter: sepia(0.5)grayscale(0.3) brightness(0.8);
+  -webkit-filter: sepia(0.5)grayscale(0.3) brightness(0.8);
 }
-
 .card .inner .back {
   transform: rotateY(180deg);
   background-color: #fff;
@@ -326,10 +341,15 @@ main {
   width: 100%;
   max-width: 210px;
   opacity: 1;
-  background: linear-gradient(0deg, rgb(26, 110, 121), rgb(177, 212, 241)); 
+  background: linear-gradient(0deg, rgb(45 139 136 / 20%), rgb(116 227 104 / 58%));
   background-size:cover;
   font-size: 1.3rem;
   color: #fff;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
 }
 
 .btn .btn-element {
@@ -432,19 +452,19 @@ main {
 }
 
 /* For medium screens like tablets */
-@media (max-width: 1199px) and (min-width: 768px) {
+/* @media (max-width: 1199px) and (min-width: 768px) {
   .playground {
     grid-template-columns: repeat(3, 200px);
   }
-}
+} */
 
 /* For smaller screens like mobile phones */
 @media (max-width: 767px) {
-  .playground {
+  /* .playground {
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(4, auto);
     gap: 5px;
-  }
+  } */
 
   .btn {
     padding: 20px 20px;
@@ -475,3 +495,4 @@ main {
     }
 }
 }
+

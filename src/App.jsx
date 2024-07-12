@@ -24,7 +24,7 @@ function App() {
         {content}
         <a
           style={{
-            fontSize: '1.2rem',
+            fontSize: '0.9rem',
             position: 'fixed',
             bottom: '0',
             left: '0',
@@ -34,7 +34,20 @@ function App() {
           href='http://www.freepik.com'
         >
           Icon by Freepik
-        </a> 
+        </a>
+        <a
+          style={{
+            fontSize: '0.9rem',
+            position: 'fixed',
+            top: '0',
+            left: '0',
+          }}
+          target='_blank'
+          rel='noopener noreferrer'
+          href='http://www.freepik.com'
+        >
+          Designed by pikisuperstar / Freepik
+        </a>
       </main>
     </div>
   );
