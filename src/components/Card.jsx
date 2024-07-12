@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import mountains from '../images/mountains.svg';
+import planet from '../images/planet.png'
 import 'animate.css';
 
 const Card = ({
@@ -33,7 +34,7 @@ const Card = ({
     >
       <div className='inner'>
         <div className='front'>
-          <img src={mountains} alt='Front' />
+          <img src={planet} alt='Front' />
         </div>
         <div className='back'>
           <img src={card.img} alt='Back' />

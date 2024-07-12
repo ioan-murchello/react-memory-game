@@ -41,19 +41,28 @@ main {
   justify-content: center;
   row-gap: 2rem;
   width: 100%;
+  max-width: 1000px;
   height: 100%;
   padding: 10px;
 }
 
-.players {
+.players { 
   width: 100%;
-  align-self: self-start;
 }
 
-.players div {
+.players div { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 5px;
   text-align: center;
   font-size: 1.8rem;
+}
+
+@media (max-width: 600px) {
+  .players div {
+    font-size: 1.2em;
+  }
 }
 
 .players span {
@@ -62,8 +71,8 @@ main {
 }
 
 .currentPlayer {
-  background-color: #a66ee6;
-  color: white; 
+  background: linear-gradient(to top, rgb(27, 71, 158), rgb(78, 214, 232));
+  color: white;
 }
 
 .currentPlayer span {
@@ -76,20 +85,12 @@ main {
   place-content: center;
   gap: 10px;
 }
-
-@media (max-width: 968px) {
+ 
+@media (max-width: 600px) {
   .playground {
     width: 100% !important; 
   }
 }
-
-@media (max-width: 600px) {
-  .playground {
-    width: 100% !important;
-    height: 50% !important;
-  }
-}
-
 
 .main-menu {
   display: flex;
@@ -105,6 +106,9 @@ main {
 .select-players {
   display: flex;
   column-gap: 1.5rem;
+  @media (max-width: 600px) {
+    column-gap: 0.8rem;
+  }
 }
 
 .select-players button {
@@ -127,8 +131,8 @@ main {
 
 .card img {
   position: absolute;
-  width: 65%;
-  height: 65%;
+  width: 80%;
+  height: 80%;
   object-fit: contain;
 }
 
@@ -203,9 +207,7 @@ main {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  box-shadow: 0 0 15px 5px rgb(3, 248, 27), 0 0 15px 20px rgb(36, 233, 56),
-    0 0 15px 40px rgb(126, 240, 137);
+  -o-border-radius: 50%; 
 }
 
 .info h2 {
@@ -222,7 +224,7 @@ main {
 
 .activePlayer {
   box-shadow: 0px 0px 15px black;
-  background: linear-gradient(-20deg, rgb(128, 68, 0), orange) !important;
+  background: linear-gradient(0deg, rgb(29, 155, 69), rgb(221, 255, 0)) !important;
 }
 
 .scores-info {
@@ -324,7 +326,8 @@ main {
   width: 100%;
   max-width: 210px;
   opacity: 1;
-  background: linear-gradient(8deg, rgb(26, 110, 121), rgb(51, 155, 240));
+  background: linear-gradient(0deg, rgb(26, 110, 121), rgb(177, 212, 241)); 
+  background-size:cover;
   font-size: 1.3rem;
   color: #fff;
 }
@@ -332,6 +335,7 @@ main {
 .btn .btn-element {
   font-weight: 500;
   letter-spacing: 0.7px;
+  font-size: 1.5rem;
 }
 
 .btn:hover {
@@ -392,14 +396,17 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('./images/funnyimg.jpg');
+  background-image: url('./images/zoo.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  filter: blur(4px) sepia(0.7) grayscale(0.4);
+  filter: blur(4px) sepia(0.3) grayscale(0.2);
   z-index: -1;
+  -webkit-filter: blur(4px) sepia(0.3) grayscale(0.2);
 }
 
-.content { 
+
+
+.content {
   z-index: 1;
 }
 
@@ -443,13 +450,28 @@ main {
     padding: 20px 20px;
     height: 50px;
     font-size: 1rem;
+    max-width: 110px;
   }
 
   .btn .btn-element {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .info {
     max-width: 90%;
-  }
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+
+    .action-btns button{
+      padding: 20px;
+
+      svg{
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+    }
+}
 }

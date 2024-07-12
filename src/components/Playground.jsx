@@ -71,15 +71,16 @@ const Playground = () => {
     );
     setCards(updatedCards);
   };
-
-  // level === 0 ? '160px' : level === 1 ? '120px' : '100px';
+ 
   const styled = {
     gridTemplateRows: `repeat(${level === 0 ? 2 : level === 1 ? 4 : 4}, 1fr)`,
     gridTemplateColumns: `repeat(${
       level === 0 ? 4 : level === 1 ? 4 : 6
     }, 1fr)`,
-    width: `${level === 0 ? '36%' : level === 1 ? '50%' : '50%'}`,
-    height: `${level === 0 ? '50%' : level === 1 ? '70%' : '70%'}`,
+    width: `${level === 0 ? '36%' : level === 1 ? '50%' : '70%'}`,
+    height: `${
+      level === 0 ? '36%' : (level === 1 && twoPlayers) ? '60%' : '70%'
+    }`, 
   };
 
   const matchedCards = () => {

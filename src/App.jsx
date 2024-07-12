@@ -22,10 +22,21 @@ function App() {
       <div className='background'></div>
       <main className='content'>
         {content}
-        <a style={{fontSize: '1.2rem', position: 'fixed', bottom: '0', left: '0',}} target='_blank' rel='noopener noreferrer' href='https://www.freepik.com/icon/fox_2153090'>Icon by Freepik</a>
+        <a
+          style={{
+            fontSize: '1.2rem',
+            position: 'fixed',
+            bottom: '0',
+            left: '0',
+          }}
+          target='_blank'
+          rel='noopener noreferrer'
+          href='http://www.freepik.com'
+        >
+          Icon by Freepik
+        </a> 
       </main>
     </div>
   );
 }
-
 export default App;

@@ -58,8 +58,7 @@ const MainMenu = () => {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  columnGap: '1rem',
-                  fontSize: '1.5rem',
+                  columnGap: '1rem', 
                 }}
               >
                 {el}
