@@ -35,8 +35,8 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
   };
 
   const more = scores.firstPlayer > scores.secondPlayer;
-// scores.firstPlayer === scores.secondPlayer ? true : null;
-  const equal = true
+
+  const equal = scores.firstPlayer === scores.secondPlayer ? true : null;
 
 
   return (
