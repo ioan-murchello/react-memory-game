@@ -1,8 +1,5 @@
 
-import { useState, useEffect } from 'react';
-import mountains from '../images/mountains.svg';
-import leaves from '../images/leaves.jpg'
-import planet from '../images/planet.png'
+import { useState, useEffect } from 'react'; 
 import 'animate.css';
 
 const Card = ({
@@ -13,6 +10,7 @@ const Card = ({
   handleIndexes,
 }) => {
   const [isFlipped, setIsFlipped] = useState(card.isFlipped);
+  const [isAnimating, setIsAnimating] = useState(false);  
 
   useEffect(() => {
     setIsFlipped(card.isFlipped);
@@ -20,9 +18,15 @@ const Card = ({
 
   const handleClick = (e, index) => {
     e.stopPropagation();
-    if (!card.isFlipped) {
+    if(selectedCards.length >= 2) { 
+      return
+    }
+
+    if (!card.isFlipped && !isAnimating) {
+      setIsAnimating(true)
       handleIndexes(index, card.id);
       setSelectedCards([...selectedCards, card]);
+      setTimeout(() => {setIsAnimating(false); }, 500)
     }
   };
 
@@ -34,9 +38,7 @@ const Card = ({
       onClick={(e) => handleClick(e, index)}
     >
       <div className='inner'>
-        <div className='front'>
-          {/* <img src={leaves} alt='Front' /> */}
-        </div>
+        <div className='front'></div>
         <div className='back'>
           <img src={card.img} alt='Back' />
         </div>

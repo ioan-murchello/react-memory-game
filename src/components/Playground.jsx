@@ -88,7 +88,7 @@ const Playground = () => {
   const styled = {
     gridTemplateRows: `repeat(${
       level === 0 && lessThen600
-        ? 4
+        ? 5
         : level === 0 && moreThen600
         ? 2
         : level === 1
@@ -102,6 +102,8 @@ const Playground = () => {
     gridTemplateColumns: `repeat(${
       level === 0 && lessThen600
         ? 2
+        : level === 0 && moreThen600
+        ? 5
         : level === 1
         ? 4
         : level === 2 && lessThen600
@@ -112,27 +114,31 @@ const Playground = () => {
     }, 1fr)`,
     width: `${
       level === 0 && lessThen600
-        ? '56%'
-      :level === 0 && moreThen600
-        ? '100%'
-        : level === 1
-        ? '68%'
-        : level === 1 && moreThen600
+        ? '70%'
+        : level === 0 && moreThen600
         ? '80%'
-        : '100%'
+        : level === 1 && moreThen600 && twoPlayers
+        ? '50%'
+        : level === 1 && moreThen600
+        ? '60%'
+        : level === 2 && lessThen600
+        ? '96%'
+        : '80%'
     }`,
     height: `${
-      level === 0 && lessThen600
-        ? '75%'
-      :level === 0 && moreThen600
-      ? '50%'
-        : level === 1
+      level === 0 && lessThen600 && twoPlayers
+        ? '62%'
+        : level === 0 && lessThen600
+        ? '65%'
+        : level === 0 && moreThen600
+        ? '46%'
+        : level === 1 && moreThen600 && twoPlayers
         ? '60%'
         : level === 1 && moreThen600
-        ? '68%'
-        : level === 2 && lessThen600
         ? '70%'
-        : '65%'
+        : level === 2 && lessThen600
+        ? '60%'
+        : '60%'
     }`,
   };
 
@@ -200,15 +206,18 @@ const Playground = () => {
           </div>
         </div>
       ) : (
-        <div>
+        <div className='player-score'>
           {!twoPlayers && (
-            <span style={{ padding: '20px', fontSize: '2rem' }}>
+            <span>
               score: {cardsMatched} / {cards.length / 2}
             </span>
           )}
         </div>
       )}
-      <div style={styled} className='playground'>
+      <div
+        style={styled}
+        className='playground animate__animated animate__fadeIn'
+      >
         {cards.length > 0 &&
           cards.map((el, index) => (
             <Card

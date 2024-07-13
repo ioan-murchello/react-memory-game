@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { GameContext } from '../context';
 import { TfiReload } from 'react-icons/tfi';
 import { RxExit } from 'react-icons/rx'; 
@@ -50,13 +50,9 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
             {equal ? (
               <div className='scores-info'>
                 <img
-                  style={{
-                    width: '200px',
-                    height: '200px',
-                    borderRadius: '50%',
-                  }}
-                  src={catAndDog}
-                  alt='cat and dog'
+                  
+                  src={cat}
+                  alt='image'
                 />
                 <h2>Scores are equal</h2>
                 {/* <FaHandshake /> */}
@@ -73,9 +69,8 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
             )}
           </div>
         ) : (
-          <div>
-            <img
-              style={{ width: '200px', height: '200px' }}
+          <div className='single-player'>
+            <img 
               src={cat}
               alt='cat'
             />
@@ -83,7 +78,7 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
           </div>
         )}
 
-        <div className='action-btns'>
+        <div className='action-btns '>
           <button onClick={exitGame}>
             <RxExit />
           </button>

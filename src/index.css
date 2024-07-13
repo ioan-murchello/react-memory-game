@@ -78,9 +78,24 @@ main {
 }
 
 .players span {
-  color: rgb(255, 234, 0);
-  font-size: 2rem;
+  color: rgb(0, 110, 255);
+  font-size: clamp(1rem, 1.3rem, 1.5rem);
 }
+
+.player-score {
+  font-size: clamp(1rem, 1.3rem, 1.5rem);
+  padding: 5px 20px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  width: 90%; 
+  background-color: #fcffe0c8;
+  box-shadow: 0 0 5px ;
+}
+
+
 
 .currentPlayer {
   background: rgba(13, 165, 76, 0.867) !important; 
@@ -96,15 +111,16 @@ main {
   perspective: 1000px;
   place-content: center;
   gap: 0.5rem;
+  /* background-color: rgb(247, 254, 200); */
+  padding: 5px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
 }
  
-@media (max-width: 600px) {
-  .playground {
-    width: 100% !important; 
-    /* height: 45% !important; */
-  }
-}
-
+ 
 .main-menu {
   display: flex;
   flex-direction: column;
@@ -175,11 +191,10 @@ main {
   backface-visibility: hidden;
 }
 
-.card .inner .front {
-  background-image: url('./images/leaves.jpg');
-  background-size: cover;
-  filter: sepia(0.5)grayscale(0.3) brightness(0.8);
-  -webkit-filter: sepia(0.5)grayscale(0.3) brightness(0.8);
+.card .inner .front {  
+  background: rgba(141, 243, 183, 0.586);
+
+  backdrop-filter: blur(4px)
 }
 .card .inner .back {
   transform: rotateY(180deg);
@@ -217,12 +232,7 @@ main {
   max-height: 500px;
   min-height: 200px;
   background-color: rgba(189, 210, 236, 0.404);
-  padding: 1.2rem;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%; 
+  padding: 1.2rem; 
 }
 
 .info h2 {
@@ -232,9 +242,27 @@ main {
 
 .info button {
   padding: 10px 15px;
-  border-radius: 8px;
   font-size: 1rem;
   text-transform: uppercase;
+  border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
+  -webkit-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
+  -moz-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
+  -ms-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
+  -o-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
+}
+.info button:first-child{
+  border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
+  -webkit-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
+  -moz-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
+  -ms-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
+  -o-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
+}
+.info button:last-child{
+    border-radius:  13% 87% 18% 82% / 77% 3% 97% 23% ;
+    -webkit-border-radius:  13% 87% 18% 82% / 77% 3% 97% 23% ;
+    -moz-border-radius:  13% 87% 18% 82% / 77% 3% 97% 23% ;
+    -ms-border-radius:  13% 87% 18% 82% / 77% 3% 97% 23% ;
+    -o-border-radius:  13% 87% 18% 82% / 77% 3% 97% 23% ;
 }
 
 .activePlayer {
@@ -341,7 +369,7 @@ main {
   width: 100%;
   max-width: 210px;
   opacity: 1;
-  background: linear-gradient(0deg, rgb(45 139 136 / 20%), rgb(116 227 104 / 58%));
+  background: linear-gradient(0deg, rgb(45, 139, 136), rgb(116 227 104 / 58%));
   background-size:cover;
   font-size: 1.3rem;
   color: #fff;
@@ -419,9 +447,9 @@ main {
   background-image: url('./images/zoo.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  filter: blur(4px) sepia(0.3) grayscale(0.2);
+  filter: blur(1px) sepia(0.3) grayscale(0.2);
   z-index: -1;
-  -webkit-filter: blur(4px) sepia(0.3) grayscale(0.2);
+  -webkit-filter: blur(1px) sepia(0.3) grayscale(0.2);
 }
 
 
@@ -429,43 +457,17 @@ main {
 .content {
   z-index: 1;
 }
-
-.select-players .btn:nth-child(1) .btn-element {
-  color: rgb(36, 255, 36);
-}
-
-.select-players .btn:nth-child(2) .btn-element {
-  color: orange;
-}
-
-.select-players .btn:nth-child(3) .btn-element {
-  color: rgb(24, 23, 23);
-}
-
-/* Media Queries */
-
-/* For large screens and desktops */
+  
+ 
 @media (min-width: 1200px) {
   .playground {
     grid-template-columns: repeat(4, 200px);
   }
 }
+ 
 
-/* For medium screens like tablets */
-/* @media (max-width: 1199px) and (min-width: 768px) {
-  .playground {
-    grid-template-columns: repeat(3, 200px);
-  }
-} */
-
-/* For smaller screens like mobile phones */
-@media (max-width: 767px) {
-  /* .playground {
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(4, auto);
-    gap: 5px;
-  } */
-
+ 
+@media (max-width: 767px) { 
   .btn {
     padding: 20px 20px;
     height: 50px;
@@ -494,5 +496,13 @@ main {
       }
     }
 }
+}
+
+.single-player{
+
+}
+.single-player img{
+  width: 200px;
+  height: 200px;
 }
 
