@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
 import { GameContext } from '../context';
 import { TfiReload } from 'react-icons/tfi';
-import { RxExit } from 'react-icons/rx'; 
+import { RxExit } from 'react-icons/rx';
 import trophy from '../images/trophy_gold.png';
-import hands from '../images/handshake.png'
+import hands from '../images/handshake.png';
 import 'animate.css';
 
 const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
@@ -35,9 +35,12 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
   };
 
   const more = scores.firstPlayer > scores.secondPlayer;
+  const less = scores.firstPlayer < scores.secondPlayer;
 
-  const equal = scores.firstPlayer === scores.secondPlayer ? true : null;
-
+  const equal =
+    scores.firstPlayer === scores.secondPlayer && scores.firstPlayer !== 0
+      ? true
+      : null; 
 
   return (
     <div className='game-over '>
@@ -69,14 +72,17 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
                   style={{ width: '150px', height: '150px' }}
                 />
                 <h2>{more ? 'Player 1' : 'Player 2'} Won!</h2>
-                <p>Score: {more ? scores.firstPlayer : scores.secondPlayer}</p>
+                <p>
+                  {more
+                    ? `Score: ${scores.firstPlayer}`
+                    : `Score: ${scores.secondPlayer}`}
+                </p>
               </div>
             )}
           </div>
         ) : (
           <div className='single-player'>
             <img src={trophy} alt='trophy' />
-            {/* <h2 style={{ textAlign: 'center' }}>Complete</h2> */}
           </div>
         )}
 

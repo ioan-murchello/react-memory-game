@@ -3,6 +3,7 @@ import MainMenu from './components/MainMenu';
 import Playground from './components/Playground';
 import { useContext } from 'react';
 import { GameContext } from './context';
+import GameOver from './components/GameOver';
 
 function App() {
   const {
@@ -48,7 +49,7 @@ function App() {
         >
           Designed by pikisuperstar / Freepik
         </a>
-      </main>
+      </main> 
     </div>
   );
 }

@@ -123,7 +123,7 @@ const Playground = () => {
         ? '60%'
         : level === 2 && lessThen600
         ? '96%'
-        : '80%'
+        : '65%'
     }`,
     height: `${
       level === 0 && lessThen600 && twoPlayers
@@ -182,7 +182,7 @@ const Playground = () => {
       setTimeout(() => {
         matchedCards();
         setSelectedCards([]);
-      }, 800);
+      }, 700);
     }
   }, [selectedCards]);
 

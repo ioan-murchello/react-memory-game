@@ -9,7 +9,7 @@ const initialState = {
   twoPlayers: false,
   level: 0,
   cardsMatched: 0,
-  scores: { firstPlayer: 4, secondPlayer: 4 }, 
+  scores: { firstPlayer: 0, secondPlayer: 0 }, 
 }; 
 const GameContextProvider = ({children}) => {
     const [gameState, setGameState] = useState(initialState)

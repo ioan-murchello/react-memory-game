@@ -26,7 +26,7 @@ const Card = ({
       setIsAnimating(true)
       handleIndexes(index, card.id);
       setSelectedCards([...selectedCards, card]);
-      setTimeout(() => {setIsAnimating(false); }, 500)
+      setTimeout(() => {setIsAnimating(false); }, 300)
     }
   };
 

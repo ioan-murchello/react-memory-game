@@ -51,7 +51,7 @@ main {
 }
 
 .players div {
-  display: flex;
+  display: flex;  
   justify-content: center;
   align-items: center;
   padding: 5px;
@@ -79,7 +79,7 @@ main {
 
 .players span {
   color: rgb(0, 110, 255);
-  font-size: clamp(1rem, 1.3rem, 1.5rem);
+  font-size: 1.8rem;
 }
 
 .player-score {
@@ -98,20 +98,19 @@ main {
 
 
 .currentPlayer {
-  background: rgba(13, 165, 76, 0.867) !important; 
-  color: white;
+  background: rgba(141, 243, 183, 0.738) !important; 
+  box-shadow: 0 0 10px 5px rgb(217, 217, 11) !important;
 }
 
 .currentPlayer span {
-  color: rgb(70, 255, 14);
+  color: rgb(94, 14, 255); 
 }
 
 .playground {
   display: grid;
   perspective: 1000px;
   place-content: center;
-  gap: 0.5rem;
-  /* background-color: rgb(247, 254, 200); */
+  gap: 0.5rem; 
   padding: 5px;
   border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -295,6 +294,20 @@ main {
 
 .action-btns button {
   padding: 20px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+}
+
+.action-btns button:hover{
+  border-radius:  4px;
+  -webkit-border-radius:  4px;
+  -moz-border-radius:  4px;
+  -ms-border-radius:  4px;
+  -o-border-radius:  4px;
 }
 
 .action-btns svg {
@@ -472,7 +485,7 @@ main {
     padding: 20px 20px;
     height: 50px;
     font-size: 1rem;
-    max-width: 110px;
+    max-width: 130px;
   }
 
   .btn .btn-element {

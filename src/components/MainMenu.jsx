@@ -3,7 +3,7 @@ import { GameContext } from '../context';
 import { TbCards } from 'react-icons/tb';
 
 const MainMenu = () => {
-  const { setGameForTwoPlayers, selectNumberOfCards, setStartGame, gameState } =
+  const { setGameForTwoPlayers, selectNumberOfCards, setStartGame, } =
     useContext(GameContext);
 
   const [activePlayer, setActivePlayer] = useState(false);
@@ -24,13 +24,12 @@ const MainMenu = () => {
     selectNumberOfCards(index);
   };
   return (
-    <div className='main-menu'>
+    <div className='main-menu animate__animated animate__pulse'>
       <div className='select-players'>
         <button
           type='button'
           className={`btn ${!activePlayer ? 'activePlayer' : ''}`}
           onClick={() => handlePlayer(false)}
-           
         >
           1 Player
         </button>
@@ -38,7 +37,6 @@ const MainMenu = () => {
           className={`btn ${activePlayer ? 'activePlayer' : ''}`}
           type='button'
           onClick={() => handlePlayer(true)}
-           
         >
           2 Player
         </button>
@@ -58,7 +56,7 @@ const MainMenu = () => {
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  columnGap: '1rem', 
+                  columnGap: '1rem',
                 }}
               >
                 {el}

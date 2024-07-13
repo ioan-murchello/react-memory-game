@@ -1,4 +1,4 @@
- import butterfly from './images/butterfly.svg'
+
  import caty from './images/caty.svg'
  import crab from './images/crab.svg';
  import crow from './images/crow.svg';
@@ -8,12 +8,12 @@
  import foxi from './images/foxi.svg';
  import frog from './images/frog.svg';
  import ladybag from './images/ladybug.svg';
- import owl from './images/owl.svg';
+ import owl from './images/owl_2.png';
  import toucan from './images/toucan.svg';
  import turtle_svg from './images/turtle_svg.svg';
 
 const imagesForCards = [
-  { isFlipped: false, id: 1, isMatched: false, img: caty },
+  { isFlipped: false, id: 1, isMatched: false, img: dolphin },
   { isFlipped: false, id: 2, isMatched: false, img: crab },
   { isFlipped: false, id: 3, isMatched: false, img: frog },
   { isFlipped: false, id: 4, isMatched: false, img: foxi },
@@ -24,7 +24,7 @@ const imagesForCards = [
   { isFlipped: false, id: 9, isMatched: false, img: ladybag },
   { isFlipped: false, id: 10, isMatched: false, img: owl },
   { isFlipped: false, id: 11, isMatched: false, img: toucan },
-  { isFlipped: false, id: 12, isMatched: false, img: dolphin },
+  { isFlipped: false, id: 12, isMatched: false, img: caty },
 ];
  
 
