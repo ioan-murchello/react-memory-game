@@ -114,7 +114,7 @@ const Playground = () => {
     }, 1fr)`,
     width: `${
       level === 0 && lessThen600
-        ? '70%'
+        ? '60%'
         : level === 0 && moreThen600
         ? '80%'
         : level === 1 && moreThen600 && twoPlayers
@@ -129,7 +129,7 @@ const Playground = () => {
       level === 0 && lessThen600 && twoPlayers
         ? '62%'
         : level === 0 && lessThen600
-        ? '65%'
+        ? '60%'
         : level === 0 && moreThen600
         ? '46%'
         : level === 1 && moreThen600 && twoPlayers
@@ -137,8 +137,8 @@ const Playground = () => {
         : level === 1 && moreThen600
         ? '70%'
         : level === 2 && lessThen600
-        ? '60%'
-        : '60%'
+        ? '46%'
+        : '50%'
     }`,
   };
 

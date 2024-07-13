@@ -2,8 +2,8 @@ import { useContext, useState } from 'react';
 import { GameContext } from '../context';
 import { TfiReload } from 'react-icons/tfi';
 import { RxExit } from 'react-icons/rx'; 
-import cat from '../images/caty.svg';
-import catAndDog from '../images/butterfly.svg';
+import trophy from '../images/trophy_gold.png';
+import hands from '../images/handshake.png'
 import 'animate.css';
 
 const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
@@ -35,8 +35,9 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
   };
 
   const more = scores.firstPlayer > scores.secondPlayer;
+// scores.firstPlayer === scores.secondPlayer ? true : null;
+  const equal = true
 
-  const equal = scores.firstPlayer === scores.secondPlayer;
 
   return (
     <div className='game-over '>
@@ -50,19 +51,23 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
             {equal ? (
               <div className='scores-info'>
                 <img
-                  
-                  src={cat}
+                  src={hands}
                   alt='image'
+                  style={{ width: '150px', height: '150px' }}
                 />
                 <h2>Scores are equal</h2>
-                {/* <FaHandshake /> */}
                 <p>
                   FirstPlayer: {scores.firstPlayer}, SecondPlayer:{' '}
                   {scores.secondPlayer}
                 </p>
               </div>
             ) : (
-              <div>
+              <div className='scores-info'>
+                <img
+                  src={trophy}
+                  alt='trophy'
+                  style={{ width: '150px', height: '150px' }}
+                />
                 <h2>{more ? 'Player 1' : 'Player 2'} Won!</h2>
                 <p>Score: {more ? scores.firstPlayer : scores.secondPlayer}</p>
               </div>
@@ -70,11 +75,8 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
           </div>
         ) : (
           <div className='single-player'>
-            <img 
-              src={cat}
-              alt='cat'
-            />
-            <h2 style={{ textAlign: 'center' }}>Complete</h2>
+            <img src={trophy} alt='trophy' />
+            {/* <h2 style={{ textAlign: 'center' }}>Complete</h2> */}
           </div>
         )}
 

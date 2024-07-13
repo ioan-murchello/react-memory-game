@@ -364,7 +364,7 @@ main {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  padding: 40px 40px;
+  padding: 30px;
   height: 60px;
   width: 100%;
   max-width: 210px;
@@ -489,6 +489,7 @@ main {
 
     .action-btns button{
       padding: 20px;
+      cursor: pointer;
 
       svg{
         width: 1.8rem;
