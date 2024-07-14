@@ -70,7 +70,7 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
                     {scores.secondPlayer}
                   </p>
                 ) : (
-                  ''
+                  '...'
                 )}
               </div>
             ) : (
@@ -80,14 +80,13 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
                   alt='trophy'
                   style={{ width: '150px', height: '150px' }}
                 />
-                <h2>{more ? 'Player 1 Won!' : less ? 'Player 2 Won!' : ''}</h2>
-                <p>
-                  {more
-                    ? `Score: ${scores.firstPlayer}`
-                    : less
-                    ? `Score: ${scores.secondPlayer}`
-                    : ''}
-                </p>
+                <h2>{more && 'Player 1 Won!'} {less && 'Player 2 Won!'}</h2>
+                
+                  <p>{more && `Score: ${scores.firstPlayer}`}</p>
+                  <p>
+                    {less && `Score: ${scores.secondPlayer}`}  
+                  </p>
+              
               </div>
             )}
           </div>

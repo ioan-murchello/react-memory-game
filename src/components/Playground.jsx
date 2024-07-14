@@ -150,7 +150,7 @@ const Playground = () => {
       if (playersSwitcher) {
         setScores('secondPlayer');
       }
-      
+
       incrementMatched();
 
       let updatedCards = cards.map((card) => {
