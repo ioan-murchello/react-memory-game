@@ -19,8 +19,8 @@ const Playground = () => {
     images = imagesForCards
       .slice(0, 5)
       .flatMap(({ img }, index) => [
-        { id: `${index}-1`, img, isMatched: false, isFlipped: false },
-        { id: `${index}-2`, img, isMatched: false, isFlipped: false },
+        { id: `${index}-1`, img, isFlipped: false },
+        { id: `${index}-2`, img, isFlipped: false },
       ])
       .sort(() => Math.random() - 0.5);
   }
@@ -28,16 +28,16 @@ const Playground = () => {
     images = imagesForCards
       .slice(0, 8)
       .flatMap(({ img }, index) => [
-        { id: `${index}-1`, img, isMatched: false, isFlipped: false },
-        { id: `${index}-2`, img, isMatched: false, isFlipped: false },
+        { id: `${index}-1`, img, isFlipped: false },
+        { id: `${index}-2`, img, isFlipped: false },
       ])
       .sort(() => Math.random() - 0.5);
   }
   if (level === 2) {
     images = imagesForCards
       .flatMap(({ img }, index) => [
-        { id: `${index}-1`, img, isMatched: false, isFlipped: false },
-        { id: `${index}-2`, img, isMatched: false, isFlipped: false },
+        { id: `${index}-1`, img, isFlipped: false },
+        { id: `${index}-2`, img, isFlipped: false },
       ])
       .sort(() => Math.random() - 0.5);
   }
@@ -50,7 +50,7 @@ const Playground = () => {
 
   const shuffleAndResetCards = () => {
     const shuffledCards = cards
-      .map((card) => ({ ...card, isFlipped: false, isMatched: false }))
+      .map((card) => ({ ...card, isFlipped: false,}))
       .sort(() => Math.random() - 0.5);
 
     setSelectedCards([]);
@@ -150,13 +150,15 @@ const Playground = () => {
       if (playersSwitcher) {
         setScores('secondPlayer');
       }
+      
       incrementMatched();
+
       let updatedCards = cards.map((card) => {
         if (
           card.img === selectedCards[0].img &&
           card.img === selectedCards[1].img
         ) {
-          return { ...card, isMatched: true, isFlipped: true };
+          return { ...card, isFlipped: true };
         }
         return card;
       });
@@ -169,7 +171,7 @@ const Playground = () => {
           card.img === selectedCards[0].img ||
           card.img === selectedCards[1].img
         ) {
-          return { ...card, isMatched: false, isFlipped: false };
+          return { ...card, isFlipped: false };
         }
         return card;
       });

@@ -13,18 +13,18 @@
  import turtle_svg from './images/turtle_svg.svg';
 
 const imagesForCards = [
-  { isFlipped: false, id: 1, isMatched: false, img: dolphin },
-  { isFlipped: false, id: 2, isMatched: false, img: crab },
-  { isFlipped: false, id: 3, isMatched: false, img: frog },
-  { isFlipped: false, id: 4, isMatched: false, img: foxi },
-  { isFlipped: false, id: 5, isMatched: false, img: fish },
-  { isFlipped: false, id: 6, isMatched: false, img: dog },
-  { isFlipped: false, id: 7, isMatched: false, img: crow },
-  { isFlipped: false, id: 8, isMatched: false, img: turtle_svg },
-  { isFlipped: false, id: 9, isMatched: false, img: ladybag },
-  { isFlipped: false, id: 10, isMatched: false, img: owl },
-  { isFlipped: false, id: 11, isMatched: false, img: toucan },
-  { isFlipped: false, id: 12, isMatched: false, img: caty },
+  { isFlipped: false, id: 1, img: dolphin },
+  { isFlipped: false, id: 2, img: crab },
+  { isFlipped: false, id: 3, img: frog },
+  { isFlipped: false, id: 4, img: foxi },
+  { isFlipped: false, id: 5, img: fish },
+  { isFlipped: false, id: 6, img: dog },
+  { isFlipped: false, id: 7, img: crow },
+  { isFlipped: false, id: 8, img: turtle_svg },
+  { isFlipped: false, id: 9, img: ladybag },
+  { isFlipped: false, id: 10, img: owl },
+  { isFlipped: false, id: 11, img: toucan },
+  { isFlipped: false, id: 12, img: caty },
 ];
  
 

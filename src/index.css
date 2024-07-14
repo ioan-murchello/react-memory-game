@@ -46,12 +46,12 @@ main {
   padding: 10px;
 }
 
-.players { 
+.players {
   width: 100%;
 }
 
 .players div {
-  display: flex;  
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px;
@@ -59,14 +59,14 @@ main {
   text-align: center;
   font-size: 1.8rem;
   background: rgba(233, 247, 252, 0.583);
-  color:#000000;
+  color: #000000;
   box-shadow: 0 0 5px black;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
-  &:first-child{
+  &:first-child {
     margin-bottom: 5px;
   }
 }
@@ -90,27 +90,25 @@ main {
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
-  width: 90%; 
+  width: 90%;
   background-color: #fcffe0c8;
-  box-shadow: 0 0 5px ;
+  box-shadow: 0 0 5px;
 }
 
-
-
 .currentPlayer {
-  background: rgba(141, 243, 183, 0.738) !important; 
+  background: rgba(141, 243, 183, 0.738) !important;
   box-shadow: 0 0 10px 5px rgb(217, 217, 11) !important;
 }
 
 .currentPlayer span {
-  color: rgb(94, 14, 255); 
+  color: rgb(94, 14, 255);
 }
 
 .playground {
   display: grid;
   perspective: 1000px;
   place-content: center;
-  gap: 0.5rem; 
+  gap: 0.5rem;
   padding: 5px;
   border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -118,8 +116,7 @@ main {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
 }
- 
- 
+
 .main-menu {
   display: flex;
   flex-direction: column;
@@ -155,6 +152,7 @@ main {
   border-radius: 8px;
   perspective: 1000px;
   transition: transform 0.6s;
+  cursor: pointer;
 }
 
 .card img {
@@ -190,10 +188,10 @@ main {
   backface-visibility: hidden;
 }
 
-.card .inner .front {  
+.card .inner .front {
   background: rgba(141, 243, 183, 0.586);
 
-  backdrop-filter: blur(4px)
+  backdrop-filter: blur(4px);
 }
 .card .inner .back {
   transform: rotateY(180deg);
@@ -231,7 +229,7 @@ main {
   max-height: 500px;
   min-height: 200px;
   background-color: rgba(189, 210, 236, 0.404);
-  padding: 1.2rem; 
+  padding: 1.2rem;
 }
 
 .info h2 {
@@ -243,30 +241,34 @@ main {
   padding: 10px 15px;
   font-size: 1rem;
   text-transform: uppercase;
-  border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
-  -webkit-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
-  -moz-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
-  -ms-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
-  -o-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
+  border-radius: 3% 97% 10% 90% / 90% 7% 93% 10%;
+  -webkit-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10%;
+  -moz-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10%;
+  -ms-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10%;
+  -o-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10%;
 }
-.info button:first-child{
-  border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
-  -webkit-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
-  -moz-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
-  -ms-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
-  -o-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10% ;
+.info button:first-child {
+  border-radius: 3% 97% 10% 90% / 90% 7% 93% 10%;
+  -webkit-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10%;
+  -moz-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10%;
+  -ms-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10%;
+  -o-border-radius: 3% 97% 10% 90% / 90% 7% 93% 10%;
 }
-.info button:last-child{
-    border-radius:  13% 87% 18% 82% / 77% 3% 97% 23% ;
-    -webkit-border-radius:  13% 87% 18% 82% / 77% 3% 97% 23% ;
-    -moz-border-radius:  13% 87% 18% 82% / 77% 3% 97% 23% ;
-    -ms-border-radius:  13% 87% 18% 82% / 77% 3% 97% 23% ;
-    -o-border-radius:  13% 87% 18% 82% / 77% 3% 97% 23% ;
+.info button:last-child {
+  border-radius: 13% 87% 18% 82% / 77% 3% 97% 23%;
+  -webkit-border-radius: 13% 87% 18% 82% / 77% 3% 97% 23%;
+  -moz-border-radius: 13% 87% 18% 82% / 77% 3% 97% 23%;
+  -ms-border-radius: 13% 87% 18% 82% / 77% 3% 97% 23%;
+  -o-border-radius: 13% 87% 18% 82% / 77% 3% 97% 23%;
 }
 
 .activePlayer {
   box-shadow: 0px 0px 15px black;
-  background: linear-gradient(0deg, rgb(29, 155, 69), rgb(221, 255, 0)) !important;
+  background: linear-gradient(
+    0deg,
+    rgb(29, 155, 69),
+    rgb(221, 255, 0)
+  ) !important;
 }
 
 .scores-info {
@@ -302,12 +304,12 @@ main {
   -o-transition: all 0.3s ease-in;
 }
 
-.action-btns button:hover{
-  border-radius:  4px;
-  -webkit-border-radius:  4px;
-  -moz-border-radius:  4px;
-  -ms-border-radius:  4px;
-  -o-border-radius:  4px;
+.action-btns button:hover {
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 
 .action-btns svg {
@@ -378,12 +380,11 @@ main {
   align-items: center;
   cursor: pointer;
   padding: 30px;
-  height: 60px;
-  width: 100%;
+  height: 60px; 
   max-width: 210px;
   opacity: 1;
   background: linear-gradient(0deg, rgb(45, 139, 136), rgb(116 227 104 / 58%));
-  background-size:cover;
+  background-size: cover;
   font-size: 1.3rem;
   color: #fff;
   border-radius: 6px;
@@ -465,22 +466,17 @@ main {
   -webkit-filter: blur(1px) sepia(0.3) grayscale(0.2);
 }
 
-
-
 .content {
   z-index: 1;
 }
-  
- 
+
 @media (min-width: 1200px) {
   .playground {
     grid-template-columns: repeat(4, 200px);
   }
 }
- 
 
- 
-@media (max-width: 767px) { 
+@media (max-width: 767px) {
   .btn {
     padding: 20px 20px;
     height: 50px;
@@ -500,23 +496,19 @@ main {
     -ms-border-radius: 0;
     -o-border-radius: 0;
 
-    .action-btns button{
+    .action-btns button {
       padding: 20px;
       cursor: pointer;
 
-      svg{
+      svg {
         width: 1.8rem;
         height: 1.8rem;
       }
     }
-}
+  }
 }
 
-.single-player{
-
-}
-.single-player img{
+.single-player img {
   width: 200px;
   height: 200px;
 }
-

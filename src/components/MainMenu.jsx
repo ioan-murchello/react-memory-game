@@ -1,6 +1,5 @@
 import { useContext, useState } from 'react';
-import { GameContext } from '../context';
-import { TbCards } from 'react-icons/tb';
+import { GameContext } from '../context'; 
 
 const MainMenu = () => {
   const { setGameForTwoPlayers, selectNumberOfCards, setStartGame, } =
@@ -38,7 +37,7 @@ const MainMenu = () => {
           type='button'
           onClick={() => handlePlayer(true)}
         >
-          2 Player
+          2 Players
         </button>
       </div>
       <div className='select-players'>

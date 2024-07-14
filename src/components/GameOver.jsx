@@ -23,6 +23,7 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
       setSwitcher(false);
     }, 500);
     shuffleAndResetCards();
+
     setGameState((prev) => {
       return {
         ...prev,
@@ -38,9 +39,11 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
   const less = scores.firstPlayer < scores.secondPlayer;
 
   const equal =
-    scores.firstPlayer === scores.secondPlayer && scores.firstPlayer !== 0
+    scores.firstPlayer &&
+    (scores.firstPlayer !== 0) === scores.secondPlayer &&
+    scores.secondPlayer !== 0
       ? true
-      : null; 
+      : null;
 
   return (
     <div className='game-over '>
@@ -59,10 +62,16 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
                   style={{ width: '150px', height: '150px' }}
                 />
                 <h2>Scores are equal</h2>
-                <p>
-                  FirstPlayer: {scores.firstPlayer}, SecondPlayer:{' '}
-                  {scores.secondPlayer}
-                </p>
+                {equal &&
+                scores.firstPlayer !== 0 &&
+                scores.secondPlayer !== 0 ? (
+                  <p>
+                    FirstPlayer: {scores.firstPlayer}, SecondPlayer:{' '}
+                    {scores.secondPlayer}
+                  </p>
+                ) : (
+                  ''
+                )}
               </div>
             ) : (
               <div className='scores-info'>
@@ -71,11 +80,13 @@ const GameOver = ({ shuffleAndResetCards, setShowModal }) => {
                   alt='trophy'
                   style={{ width: '150px', height: '150px' }}
                 />
-                <h2>{more ? 'Player 1' : 'Player 2'} Won!</h2>
+                <h2>{more ? 'Player 1 Won!' : less ? 'Player 2 Won!' : ''}</h2>
                 <p>
                   {more
                     ? `Score: ${scores.firstPlayer}`
-                    : `Score: ${scores.secondPlayer}`}
+                    : less
+                    ? `Score: ${scores.secondPlayer}`
+                    : ''}
                 </p>
               </div>
             )}
