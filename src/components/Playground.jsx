@@ -17,7 +17,7 @@ const Playground = () => {
 
   if (level === 0) {
     images = imagesForCards
-      .slice(0, 5)
+      .slice(0, 6)
       .flatMap(({ img }, index) => [
         { id: `${index}-1`, img, isFlipped: false },
         { id: `${index}-2`, img, isFlipped: false },
@@ -26,7 +26,7 @@ const Playground = () => {
   }
   if (level === 1) {
     images = imagesForCards
-      .slice(0, 8)
+      .slice(0, 10)
       .flatMap(({ img }, index) => [
         { id: `${index}-1`, img, isFlipped: false },
         { id: `${index}-2`, img, isFlipped: false },
@@ -84,60 +84,69 @@ const Playground = () => {
 
   const moreThen600 = windowWidth > 600;
   const lessThen600 = windowWidth < 600;
+  const moreThen768 = windowWidth <= 768;
 
   const styled = {
     gridTemplateRows: `repeat(${
       level === 0 && lessThen600
-        ? 5
+        ? 4
         : level === 0 && moreThen600
-        ? 2
+        ? 3
         : level === 1
         ? 4
+        : level === 1 && lessThen600
+        ? 5
         : level === 2 && lessThen600
-        ? 4
+        ? 6
         : level === 2 && moreThen600
         ? 4
         : 2
     }, 1fr)`,
     gridTemplateColumns: `repeat(${
       level === 0 && lessThen600
-        ? 2
+        ? 3
         : level === 0 && moreThen600
-        ? 5
-        : level === 1
         ? 4
+        : level === 1 && lessThen600
+        ? 4
+        : level === 1 && moreThen600
+        ? 5
         : level === 2 && lessThen600
-        ? 6
+        ? 4
         : level === 2 && moreThen600
         ? 6
         : 5
     }, 1fr)`,
     width: `${
       level === 0 && lessThen600
-        ? '60%'
+        ? '94%'
         : level === 0 && moreThen600
         ? '80%'
-        : level === 1 && moreThen600 && twoPlayers
-        ? '50%'
-        : level === 1 && moreThen600
-        ? '60%'
+        : level === 1 && lessThen600
+        ? '95%'
+        : level === 1 && moreThen600  
+        ? '100%' 
         : level === 2 && lessThen600
+        ? '96%'
+        : level === 2 && moreThen600
         ? '96%'
         : '65%'
     }`,
     height: `${
-      level === 0 && lessThen600 && twoPlayers
-        ? '62%'
-        : level === 0 && lessThen600
+      level === 0 && lessThen600
         ? '60%'
         : level === 0 && moreThen600
-        ? '46%'
-        : level === 1 && moreThen600 && twoPlayers
         ? '60%'
+        : level === 1 && lessThen600
+        ? '60%'
+        : level === 1 && moreThen600 && twoPlayers
+        ? '70%'
         : level === 1 && moreThen600
         ? '70%'
         : level === 2 && lessThen600
-        ? '46%'
+        ? '64%'
+        : level === 2 && moreThen600
+        ? '64%'
         : '50%'
     }`,
   };
