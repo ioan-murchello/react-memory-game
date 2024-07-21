@@ -26,7 +26,7 @@ const Playground = () => {
   }
   if (level === 1) {
     images = imagesForCards
-      .slice(0, 10)
+      .slice(0, 8)
       .flatMap(({ img }, index) => [
         { id: `${index}-1`, img, isFlipped: false },
         { id: `${index}-2`, img, isFlipped: false },
@@ -47,7 +47,8 @@ const Playground = () => {
   const [showModal, setShowModal] = useState(false);
   const [playersSwitcher, setPlayersSwitcher] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  console.log(windowHeight,' height')
   const shuffleAndResetCards = () => {
     const shuffledCards = cards
       .map((card) => ({ ...card, isFlipped: false,}))
@@ -72,7 +73,8 @@ const Playground = () => {
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
-      console.log(window.innerWidth);
+      setWindowHeight(window.innerHeight)
+      console.log(window.innerHeight);
     };
 
     window.addEventListener('resize', handleResize);
@@ -92,6 +94,8 @@ const Playground = () => {
         ? 4
         : level === 0 && moreThen600
         ? 3
+        : level === 1 && moreThen600 && windowHeight <= 640
+        ? 4
         : level === 1
         ? 4
         : level === 1 && lessThen600
@@ -109,8 +113,10 @@ const Playground = () => {
         ? 4
         : level === 1 && lessThen600
         ? 4
+        : level === 1 && moreThen600 && windowHeight <= 640
+        ? 4
         : level === 1 && moreThen600
-        ? 5
+        ? 4
         : level === 2 && lessThen600
         ? 4
         : level === 2 && moreThen600
@@ -120,14 +126,20 @@ const Playground = () => {
     width: `${
       level === 0 && lessThen600
         ? '94%'
+        : level === 0 && moreThen600 && windowHeight <= 640
+        ? '60%'
         : level === 0 && moreThen600
         ? '80%'
         : level === 1 && lessThen600
         ? '95%'
-        : level === 1 && moreThen600  
-        ? '100%' 
+        : level === 1 && moreThen600 && windowHeight <= 640
+        ? '45%'
+        : level === 1 && moreThen600 && windowHeight >= 768
+        ? '60%'
         : level === 2 && lessThen600
         ? '96%'
+        : level === 2 && moreThen600 && windowHeight <= 640
+        ? '60%'
         : level === 2 && moreThen600
         ? '96%'
         : '65%'
@@ -138,11 +150,9 @@ const Playground = () => {
         : level === 0 && moreThen600
         ? '60%'
         : level === 1 && lessThen600
-        ? '60%'
-        : level === 1 && moreThen600 && twoPlayers
-        ? '70%'
+        ? '50%' 
         : level === 1 && moreThen600
-        ? '70%'
+        ? '60%'
         : level === 2 && lessThen600
         ? '64%'
         : level === 2 && moreThen600
@@ -208,11 +218,11 @@ const Playground = () => {
       {twoPlayers ? (
         <div className='players'>
           <div className={`${!playersSwitcher ? 'currentPlayer' : ''}`}>
-            Player 1 {' /  '} score:
-            <span> {scores.firstPlayer}</span>
+            Player 1 {' /  '}
+            <span> {scores.firstPlayer}</span> 
           </div>
           <div className={`${playersSwitcher ? 'currentPlayer' : ''}`}>
-            Player 2 {' /  '} score:
+            Player 2 {' /  '} 
             <span> {scores.secondPlayer}</span>
           </div>
         </div>

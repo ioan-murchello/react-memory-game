@@ -46,19 +46,20 @@ main {
   padding: 10px;
 }
 
-.players {
-  width: 100%;
-}
-
+.players { 
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+} 
 .players div {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 5px 10px;
   column-gap: 5px;
   text-align: center;
-  font-size: 1.8rem;
-  background: rgba(233, 247, 252, 0.583);
+  font-size: 1.4rem;
+  background: rgba(238, 253, 198, 0.583);
   color: #000000;
   box-shadow: 0 0 5px black;
   border-radius: 6px;
@@ -73,7 +74,7 @@ main {
 
 @media (max-width: 600px) {
   .players div {
-    font-size: 1.2em;
+    font-size: 1rem;
   }
 }
 
@@ -90,14 +91,13 @@ main {
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
-  width: 90%;
   background-color: #fcffe0c8;
   box-shadow: 0 0 5px;
 }
 
 .currentPlayer {
-  background: rgba(141, 243, 183, 0.738) !important;
-  box-shadow: 0 0 10px 5px rgb(217, 217, 11) !important;
+  background: rgba(169, 187, 238, 0.738) !important;
+  box-shadow: 0 0 10px 5px rgb(101, 222, 238) !important;
 }
 
 .currentPlayer span {
@@ -379,7 +379,7 @@ main {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  padding: 30px;
+  padding: 20px;
   height: 60px; 
   max-width: 210px;
   opacity: 1;
